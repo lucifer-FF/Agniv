@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Anniversary</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #ffe0f0, #f3e5f5);
+      color: #6b0f8e;
+      text-align: center;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Pacifico', cursive;
+    }
+
+    .container {
+      padding: 2rem 1rem;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      margin: 2rem auto;
+      padding: 2rem;
+      max-width: 600px;
+    }
+
+    .image-block {
+      margin-bottom: 2rem;
+    }
+
+    .image-block img {
+      width: 100%;
+      border-radius: 15px;
+    }
+
+    .section-title {
+      margin-top: 1.5rem;
+      font-size: 1.5rem;
+      color: #d63384;
+    }
+
+    #daysTogether {
+      font-size: 3rem;
+      font-weight: bold;
+      margin: 1rem 0;
+      color: #a60dc0;
+    }
+
+    .button {
+      background: linear-gradient(to right, #ff69b4, #c850c0);
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+    #surpriseText {
+      display: none;
+      margin-top: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .letter {
+      text-align: left;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .emoji {
+      font-size: 1.4rem;
+    }
+
+    .music-toggle {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: #fff;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- 🎵 Background Music -->
+  <audio id="bgMusic" autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <button class="music-toggle" onclick="toggleMusic()">🔊</button>
+
+  <div class="container">
+    <h1>🎉 Happy Anniversary!</h1>
+    <p>Every moment with you is a blessing ❤</p>
+
+    <div class="card">
+      <h2>Our Beautiful Journey Together</h2>
+      <div id="daysTogether">0</div>
+      <p>Beautiful Days Together</p>
+      <p class="emoji">💖</p>
+    </div>
+
+    <div class="card">
+      <div class="image-block">
+        <h2 class="section-title">Special moment</h2>
+        <img src="https://i.postimg.cc/k4BRWv2B/IMG-20250718-WA0004.jpg" alt="Special moment">
+      </div>
+      <div class="image-block">
+        <h2 class="section-title">Happy times</h2>
+        <img src="https://i.postimg.cc/668CZtZY/IMG-20250718-WA0003.jpg" alt="Happy times">
+      </div>
+      <div class="image-block">
+        <h2 class="section-title">Us together</h2>
+        <img src="https://i.postimg.cc/nzgj29mT/IMG-20250718-WA0002.jpg" alt="Us together">
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Your Anniversary Surprise Awaits! 💝</h2>
+      <button class="button" onclick="showSurprise()">Tap here to reveal ✨</button>
+      <div id="surpriseText">
+        <h3>A Letter From My Heart 💌</h3>
+        <p class="letter">
+          Dear disha,<br><br>
+          Happy First Anniversary  💓 
+We together spend a whole year...with much love, care, trust, happiness, and, anger also... we maybe different from each other but what holds us together is our love for each other no matter how hard we fight at the end we love each other that's how we made up one year together...🫶🫶. I never seen someone the way I see you 👀💓....no matter what I will love you endlessly 💗.... you will always stay in my heart....
+The best things ever happened to my life is meeting you 💓 and cherish every moment that I spended with you ❤ ♥.... no matter what I am there for you always and forever...my aiko 💖 
+♡I LOVE YOU SO MUCH MY AIKO♡.<br><br>
+          Happy Anniversary, my love! .
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const startDate = new Date("2024-07-18");
+    const today = new Date();
+    const diffTime = today - startDate;
+    const daysTogether = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+    document.getElementById("daysTogether").innerText = daysTogether;
+
+    function showSurprise() {
+      document.getElementById("surpriseText").style.display = 'block';
+    }
+
+    const bgMusic = document.getElementById('bgMusic');
+    let isPlaying = true;
+
+    function toggleMusic() {
+      const btn = event.target;
+      if (isPlaying) {
+        bgMusic.pause();
+        btn.textContent = '🔇';
+      } else {
+        bgMusic.play();
+        btn.textContent = '🔊';
+      }
+      isPlaying = !isPlaying;
+    }
+  </script>
+</body>
+</html>
